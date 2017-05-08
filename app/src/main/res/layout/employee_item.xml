@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="employee" type="com.example.employee.test.model.Employee"/>
+    </data>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+        <ImageView android:id="@+id/picture"
+                   android:layout_centerVertical="true"
+                   android:layout_width="72dp"
+                   android:layout_height="72dp"/>
+
+        <TextView android:id="@+id/first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{employee.first}"
+                android:textSize="18sp"
+                android:layout_alignTop="@+id/picture"
+                android:layout_toRightOf="@+id/picture"
+                android:layout_toEndOf="@+id/picture"
+                />
+
+        <TextView android:id="@+id/lname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{employee.last}"
+                android:textSize="18sp"
+                android:layout_below="@+id/first"
+                android:layout_toRightOf="@+id/picture"
+                android:layout_toEndOf="@+id/picture"
+                />
+
+        <TextView android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{employee.age}"
+                android:textSize="18sp"
+                android:layout_below="@+id/lname"
+                android:layout_toRightOf="@+id/picture"
+                android:layout_toEndOf="@+id/picture"
+                />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,78 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //Android
+    androidBuildToolsVersion = "24.0.1"
+    androidMinSdkVersion = 15
+    androidTargetSdkVersion = 21
+    androidCompileSdkVersion = 21
+
+    //Libraries
+    daggerVersion = '2.8'
+    recyclerViewVersion = '21.0.3'
+    rxJavaVersion = '2.0.2'
+    rxAndroidVersion = '2.0.1'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    gsonVersion = '2.3'
+    okHttpVersion = '2.5.0'
+    androidSupportAnnotationsVersion = '21.0.3'
+    androidAnnotationsVersion = '4.3.0'
+    arrowVersion = '1.0.0'
+    slf4jVersion = '1.7.21'
+    lombokVersion = '1.12.6'
+    requeryVersion = '1.3.0'
+    requeryAndroidVersion = '1.3.0'
+    requeryProcessor = '1.3.0'
+    jodaVersion = '2.3'
+    appacheCommonsVersion = '3.5'
+    gladeVersion = '3.7.0'
+    debugDBVersion = '1.0.0'
+    appcompatVersion = '25.3.1'
+    constraintVersion = '1.0.2'
+    designVersion = '25.3.1'
+    streamVersoin = '1.1.7'
+
+    presentationDependencies = [
+            daggerCompiler    : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            daggerProcessor   : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger            : "com.google.dagger:dagger:${daggerVersion}",
+            recyclerView      : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
+            rxJava            : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAndroid         : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            javaxInject       : "javax.inject:javax.inject:${javaxInjectVersion}",
+            javaxAnnotation   : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            androidAnnotations: "org.androidannotations:androidannotations:${androidAnnotationsVersion}",
+            requery           : "io.requery:requery:${requeryVersion}",
+            requeryAndroid    : "io.requery:requery-android:${requeryAndroidVersion}",
+            requeryProcessor  : "io.requery:requery-processor:${requeryProcessor}",
+            glade             : "com.github.bumptech.glide:glide:${gladeVersion}",
+            debugDB           : "com.amitshekhar.android:debug-db:${debugDBVersion}",
+            appcompat         : "com.android.support:appcompat-v7:${appcompatVersion}",
+            constraint        : "com.android.support.constraint:constraint-layout:${constraintVersion}",
+            design            : "com.android.support:design:${designVersion}",
+            stream            : "com.annimon:stream:${streamVersoin}"
+    ]
+
+    domainDependencies = [
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}"
+    ]
+
+    dataDependencies = [
+            appcompat                : "com.android.support:appcompat-v7:${appcompatVersion}",
+            slf4j                    : "org.slf4j:slf4j-api:${slf4jVersion}",
+            lombok                   : "org.projectlombok:lombok:${lombokVersion}",
+            okHttp                   : "com.squareup.okhttp:okhttp:${okHttpVersion}",
+            gson                     : "com.google.code.gson:gson:${gsonVersion}",
+            javaxAnnotation          : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            androidSupportAnnotations: "com.android.support:support-annotations:${androidSupportAnnotationsVersion}",
+            androidAnnotations       : "org.androidannotations:androidannotations:${androidAnnotationsVersion}",
+            joda                     : "joda-time:joda-time:${jodaVersion}",
+            appacheCommons           : "org.apache.commons:commons-lang3:${appacheCommonsVersion}"
+
+    ]
+}

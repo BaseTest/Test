@@ -1,0 +1,34 @@
+<configuration>
+    <appender name="internalFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/data/data/com.example.employee.data/files/log/employee.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>60</maxHistory>
+            <totalSizeCap>100MB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="externalFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/sdcard/android/data/com.example.employee.data/files/log/employee.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>60</maxHistory>
+            <totalSizeCap>100MB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="console" class="ch.qos.logback.classic.android.LogcatAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="ALL">
+        <appender-ref ref="console"/>
+        <appender-ref ref="internalFile"/>
+        <appender-ref ref="externalFile"/>
+    </root>
+</configuration>

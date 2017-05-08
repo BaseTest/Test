@@ -1,0 +1,92 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        >
+    <data>
+        <variable
+                name="employee"
+                type="com.example.employee.test.model.Employee"
+                />
+    </data>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            >
+
+        <ImageView
+                android:id="@+id/picture"
+                android:src="@drawable/abc_btn_colored_material"
+                android:layout_width="100dp"
+                android:adjustViewBounds="true"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignBottom="@+id/birthday"
+                />
+
+        <TextView
+                android:id="@+id/first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{employee.first}"
+                android:hint="@string/first"
+                android:layout_toRightOf="@+id/picture"
+                android:layout_toEndOf="@+id/picture"
+                />
+        <TextView
+                android:id="@+id/last"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{employee.last}"
+                android:hint="@string/last"
+                android:layout_below="@+id/first"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_toRightOf="@+id/picture"
+                android:layout_toEndOf="@+id/picture"
+                />
+
+        <TextView
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{employee.age}"
+                android:hint="@string/age"
+                android:layout_below="@+id/last"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_toRightOf="@+id/picture"
+                android:layout_toEndOf="@+id/picture"
+                />
+
+        <TextView
+                android:id="@+id/birthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:hint="@string/birthday"
+                android:layout_below="@+id/age"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_toRightOf="@+id/picture"
+                android:layout_toEndOf="@+id/picture"
+                />
+
+        <TextView
+                android:id="@+id/speсiality"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/picture"
+                android:text="@string/speсiality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".activity.EmployeeActivity"
+                android:layout_below="@+id/speсiality"
+                />
+
+    </RelativeLayout>
+</layout>

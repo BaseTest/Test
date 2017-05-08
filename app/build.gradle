@@ -1,0 +1,74 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "me.tatarka:gradle-retrolambda:3.6.1"
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+repositories {
+    jcenter()
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "com.example.employee.test"
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    compile project(':domain')
+    compile project(':data')
+
+    compile presentationDependencies.dagger
+    annotationProcessor presentationDependencies.daggerProcessor
+
+    // compile presentationDependencies.constraint
+    compile presentationDependencies.design
+    compile presentationDependencies.appcompat
+    compile presentationDependencies.recyclerView
+
+    compile presentationDependencies.rxJava
+    compile presentationDependencies.rxAndroid
+
+    compile presentationDependencies.requery
+    compile presentationDependencies.requeryAndroid
+    annotationProcessor presentationDependencies.requeryProcessor
+
+    compile presentationDependencies.javaxInject
+    compile presentationDependencies.androidAnnotations
+
+    compile presentationDependencies.glade
+
+    // debugCompile presentationDependencies.debugDB
+
+    compile presentationDependencies.stream
+}

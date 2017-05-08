@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Сотрудники организации</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_speciality">SpecialityActivity</string>
+    <string name="first">Фамилия</string>
+    <string name="last">Имя</string>
+    <string name="age">Возраст</string>
+    <string name="birthday">Дата рождения</string>
+    <string name="speсiality">Должность</string>
+</resources>
